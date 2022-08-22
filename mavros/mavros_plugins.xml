@@ -5,13 +5,19 @@ import mavros_cog
 mavros_cog.outl_plugins_xml('src/plugins', 'mavros_plugins')
 ]]] -->
 <library path="mavros_plugins">
-  <!--<class name="dummy" type="mavros::plugin::PluginFactoryTemplate&lt;mavros::std_plugins::DummyPlugin&gt;" base_class_type="mavros::plugin::PluginFactory">
+  <!-- <class name="dummy" type="mavros::plugin::PluginFactoryTemplate&lt;mavros::std_plugins::DummyPlugin&gt;" base_class_type="mavros::plugin::PluginFactory">
   <description>@brief Dummy plugin.
 @plugin dummy
 @example_plugin
 
 Example and &quot;how to&quot; for users.</description>
-</class>-->
+</class> -->
+<class name="HB_status" type="mavros::plugin::PluginFactoryTemplate&lt;mavros::std_plugins::HB_statusPlugin&gt;" base_class_type="mavros::plugin::PluginFactory">
+  <description>@brief HB_status plugin.
+@plugin HB_status
+
+get all mavlink heartbeats and publish to ROS.</description>
+</class>
   <class name="actuator_control" type="mavros::plugin::PluginFactoryTemplate&lt;mavros::std_plugins::ActuatorControlPlugin&gt;" base_class_type="mavros::plugin::PluginFactory">
     <description>@brief ActuatorControl plugin
 @plugin actuator_control
